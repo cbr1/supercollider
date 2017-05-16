@@ -1,8 +1,3 @@
-//Guerra come atto liberatorio?
-
-p.clear;
-p.pop;
-
 //audio buffer
 b = Buffer.read(s, Platform.resourceDir +/+ "sounds/a11wlk01.wav");
 
