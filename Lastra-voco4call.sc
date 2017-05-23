@@ -1,5 +1,8 @@
 //audio buffer
-b = Buffer.read(s, Platform.resourceDir +/+ "sounds/a11wlk01.wav");
+//b = Buffer.read(s, Platform.resourceDir +/+ "sounds/a11wlk01.wav");
+
+b = Buffer.read(s, Platform.userHomeDir +/+ "SC/grave.wav");
+
 
 //sine 4 test
 {SinOsc.ar(440, mul: 0.4) ! 2 }.play(s);
@@ -99,17 +102,20 @@ SynthDef(\voco,
 
 ~voc1 = \voco;
 ~voc1.fadeTime = 1;
-~voc1.xset(\gin, 0.6, \frqt, 4092, \hrm, 12, \bw, 0.7, \fb, 0.12, \tide, 1.5, \gain, 0.9, \gate, 1);
-
+~voc1.xset(\gin, 0.9, \frqt, 4092, \hrm, 12, \bw, 0.3, \fb, 0.12, \tide, 1.5, \gain, 0.9, \gate, 1);
+~voc1.release(3);
 
 ~voc2 = \voco;
-~voc2.fadeTime = 2;
+~voc2.fadeTime(3);
 ~voc2.xset(\gin, 0.6, \frqt, 1542, \hrm, 37, \bw, 0.41, \fb, 0.1, \tide, 1.89, \gain, 0.6, \gate, 1);
+~voc2.release(3);
 
 ~lastra = \lastra; //mixi=1mic
-~lastra.fadeTime = 2;
+~lastra.fadeTime = 10;
 ~lastra.xset(\mixi, 0.9, \mixo, 0.9, \frqN, 440, \ampN, 1, \frq, 178, \bat, 15, \dlt1, 5, \dlt2, 1, \lgtm, 0.02, \fb, 0.9, \frqt, 4000, \delco, 0.57, \deca, 5, \gain, 0.01, \gate, 1);
+~lastra.release;
 
+~lastra.end(10);
 //clean Proxy Space
-p.clear;
+p.clear(5);
 p.pop;
