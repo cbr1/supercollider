@@ -1,2 +1,2 @@
 # supercollider
-SC code 
+SC INIT code 
