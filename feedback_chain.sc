@@ -1,8 +1,5 @@
 //audio buffer
-//b = Buffer.read(s, Platform.resourceDir +/+ "sounds/a11wlk01.wav");
-
-b = Buffer.read(s, Platform.userHomeDir +/+ "SC/grave.wav");
-
+b = Buffer.read(s, Platform.resourceDir +/+ "sounds/a11wlk01.wav");
 
 //sine 4 test
 {SinOsc.ar(440, mul: 0.4) ! 2 }.play(s);
@@ -13,8 +10,6 @@ Server.local.options.memSize = 65536; //32768
 p = ProxySpace.push(s);
 s.boot;
 )
-
-//Cello call I mvt
 (
 SynthDef(\lastra,
 	{ |dl1, dl2, mixi=0.5, mixo=0.5, frqN=50, ampN=0.1, frq=1, bat=10, dlt1=1, dlt2=2, fb=0.2, frqt=900, lgtm=0.1, delco=1, deca=1, fadeTime=0.1, gain=1, gate=0|
